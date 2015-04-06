@@ -1,0 +1,29 @@
+microservice:
+  spec_version: '2.0'
+  name: 'ReverseGeocoder-Country'
+  description: 'Find the target country based lat/long coordinates.'
+  docker_image: 'johnleeroy/reversegeocoder-country'
+  docker_image_tag: '0.1'
+  repo_url: 'https://github.com/cloudspace/microservice-country-finder.git'
+  docker_hub_url: 'https://registry.hub.docker.com/u/johnleeroy/country-finder/'
+  category: 'geocode'
+  tags: ['geo', 'geolocation', 'geocode', 'country', 'map']
+  developer_name: 'johnleeroy'
+  developer_type: 'User'
+  published: true
+  command: './fill-in [latitude] [longitude]'
+  inputs:
+    latitude:
+      param_type: 'Alphanumeric'
+      required: true
+      secure: false
+      description: 'latitude'
+    longitude:
+      param_type: 'Alphanumeric'
+      required: true
+      secure: false
+      description: 'longitude'
+  outputs:
+    result:
+      param_type: 'Alphanumeric'
+      description: 'a json string of the query result'
